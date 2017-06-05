@@ -63,22 +63,22 @@ public class TestSchedulingStrategyPerformanceSampleTopologies {
     public static Map<String, SupervisorDetails>  getSupervisors(Map config) {
         Map<String, SupervisorDetails> supMap = new HashMap<>();
 
-        SupervisorDetails sup1 = new SupervisorDetails("sup-1", "host-1", null, PerformanceUtils.genPorts(1), new HashMap<>(config));
+        SupervisorDetails sup1 = new SupervisorDetails("sup-1", "host-1", null, PerformanceUtils.genPorts(1), new HashMap<String, Double>(config));
         supMap.put(sup1.getId(), sup1);
 
         config.put(Config.SUPERVISOR_CPU_CAPACITY, 200.0);
         config.put(Config.SUPERVISOR_MEMORY_CAPACITY_MB, 1024.0 * 4);
-        SupervisorDetails sup2 = new SupervisorDetails("sup-2", "host-2", null, PerformanceUtils.genPorts(1), new HashMap<>(config));
+        SupervisorDetails sup2 = new SupervisorDetails("sup-2", "host-2", null, PerformanceUtils.genPorts(1), new HashMap<String, Double>(config));
         supMap.put(sup2.getId(), sup2);
 
         config.put(Config.SUPERVISOR_CPU_CAPACITY, 100.0);
         config.put(Config.SUPERVISOR_MEMORY_CAPACITY_MB, 1024.0 * 4);
-        SupervisorDetails sup3 = new SupervisorDetails("sup-3", "host-3", null, PerformanceUtils.genPorts(1), new HashMap<>(config));
+        SupervisorDetails sup3 = new SupervisorDetails("sup-3", "host-3", null, PerformanceUtils.genPorts(1), new HashMap<String, Double>(config));
         supMap.put(sup3.getId(), sup3);
 
         config.put(Config.SUPERVISOR_CPU_CAPACITY, 700.0);
         config.put(Config.SUPERVISOR_MEMORY_CAPACITY_MB, 1024.0 * 4);
-        SupervisorDetails sup4 = new SupervisorDetails("sup-4", "host-4", null, PerformanceUtils.genPorts(1), new HashMap<>(config));
+        SupervisorDetails sup4 = new SupervisorDetails("sup-4", "host-4", null, PerformanceUtils.genPorts(1), new HashMap<String, Double>(config));
         supMap.put(sup4.getId(), sup4);
 
         return supMap;

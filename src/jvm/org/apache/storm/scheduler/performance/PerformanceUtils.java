@@ -93,7 +93,7 @@ public class PerformanceUtils {
             for (int j = 0; j < numPorts; j++) {
                 ports.add(j);
             }
-            SupervisorDetails sup = new SupervisorDetails("sup-" + i, "host-" + i, null, ports, new HashMap<>(resourceMap));
+            SupervisorDetails sup = new SupervisorDetails("sup-" + i, "host-" + i, null, ports, new HashMap<String, Double>(resourceMap));
             retList.put(sup.getId(), sup);
         }
         return retList;
