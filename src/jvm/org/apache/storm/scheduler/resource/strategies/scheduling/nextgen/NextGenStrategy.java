@@ -135,6 +135,7 @@ public class NextGenStrategy implements IStrategy{
         return result;
     }
 
+    
     private void scheduleExecutor(ExecutorDetails exec, TopologyDetails td, Map<WorkerSlot,
             Collection<ExecutorDetails>> schedulerAssignmentMap, Collection<ExecutorDetails> scheduledTasks) {
         WorkerSlot targetSlot = this.findWorkerForExec(exec, td, schedulerAssignmentMap);

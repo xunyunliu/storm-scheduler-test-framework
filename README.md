@@ -71,3 +71,12 @@ Example on how to run one of the tests:
 
     mvn test -Dtest=TestConstraintSolver -DfailIfNoTests=false
     
+`-DfailIfNoTests=false` will force maven to continue with the build even if the project contains no Test classes.
+
+You can run all the tests in a class, by passing the -Dtest=<class> flag to Maven:
+
+    mvn clean test -Dtest=xxxxTest
+
+Since Surefire 2.8, you can also run an individual test, say a method testA within your unit tests, using the same flag:
+
+    mvn clean test -Dtest=xxxxTest#testA
