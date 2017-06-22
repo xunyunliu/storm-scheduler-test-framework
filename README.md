@@ -5,7 +5,7 @@ documentation: true
 ---
 # Introduction
 
-The purpose of this project is to have a framework that allows users to run simulations on scheduling strategies and evaluate the effectiveness of the schedulings via a set of metrics.  The framework can also allow users to run fuzz testing to validate that the scheduling strategies are need implementated correctly.
+The purpose of this project is to have a framework that allows users to run simulations on scheduling strategies and evaluate the effectiveness of the scheduling via a set of metrics.  The framework can also allow users to run fuzz testing to validate that the scheduling strategies are implemented correctly.
 
 ## Using the Framework
 
@@ -13,13 +13,13 @@ The framework is organized similar to Apache storm.  Performance tests or fuzz t
 
 ### Generating Random Topologies
 
-The framework provides an implementation that will generate random topologies based on a set of paramenters.  The classpath of the implementation is:
+The framework provides an implementation that will generate random topologies based on a set of parameters.  The classpath of the implementation is:
 
     org.apache.storm.scheduler.performance.random.GenRandomTopology
     
 ### Generating Random Clusters
 
-The framework provides an implementation that will generate random clusters, supervisors, and racks based on a set of paramenters.  The classpath of the implementation is:
+The framework provides an implementation that will generate random clusters, supervisors, and racks based on a set of parameters.  The classpath of the implementation is:
 
     org.apache.storm.scheduler.performance.random.GenRandomCluster
     
@@ -36,13 +36,13 @@ To prevent the need to have buffer a lot of data in memory from each simulation 
 
 ### Running Tests
 
-A number of test runners are implemented to faciliate running experiments using lower level API especially if you want to run experiment using multiple threads to accelerate simulations.  They are located in:
+A number of test runners are implemented to facilitate running experiments using lower level API especially if you want to run experiment using multiple threads to accelerate simulations.  They are located in:
     
     org.apache.storm.scheduler.performance.runners
     
-The DataSetPerformanceRunner is used to simulate schedulings based on a set of StormTopology objects and topology configs.
+The DataSetPerformanceRunner is used to simulate scheduling based on a set of StormTopology objects and topology configs.
 
-The RandomStrategyPerformanceRunner is used to simulate schedulings of randomly generated topologies and clusters
+The RandomStrategyPerformanceRunner is used to simulate scheduling of randomly generated topologies and clusters
 
 ### Generating Stats using IPython Notebook/Jupyter Notebook
 
@@ -57,12 +57,12 @@ This file contains logic to generate stats based on results for a simulation run
 Examples of how to use the framework are the following (all under <project-root>/test/jvm/org/apache/storm/scheduler/performance/):
     
 1. TestSchedulingStrategyPerformanceDataset.java
-    * Provides an example of how you can use this framework to simulate scheduling topologies from a dataset in a multithreaded manner.
+    * Provides an example of how you can use this framework to simulate scheduling topologies from a dataset in a multi-threaded manner.
     * The dataset should be a set of **Thrift** serialized StormTopology objects in one folder and a set of **Java** serialized JSON string for the the corresponding topology confs.  An example is included the <project-root>/dataset folder
 2. TestSchedulingStrategyPerformanceRandomTopologies.java
-    * Provides an example of how you can use this framework to simulate schedulings of randomly generated topologies and clusters in a multithreaded manner
+    * Provides an example of how you can use this framework to simulate scheduling of randomly generated topologies and clusters in a multi-threaded manner
 3. TestSchedulingStrategyPerformanceSampleTopologies
-    * Provides an example on how to use the core API to simulate schedulings of custom defined topologies
+    * Provides an example on how to use the core API to simulate scheduling of custom defined topologies
     
     
 Please note: Progress of simulations can be monitored in the surefire output file in <PROJECT_ROOT>/target/surefire-reports
